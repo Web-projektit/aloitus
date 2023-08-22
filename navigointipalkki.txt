@@ -1,0 +1,27 @@
+Responsiivinen navigointipalkki
+
+1. Javascriptin hyödyntäminen (esim. w3schools)
+2. Bootstrap-navigointipalkki (bootstrap)
+3. CSS-navigointipalkki (google..)
+
+Hampurilaiskuvake
+
+-  fontawesome 
+-  CSS
+..
+
+<html>
+<body>
+
+<?php 
+include('header.php')
+?>
+
+
+<?php
+include('footer.php')
+?>
+</body>
+</html>
+
+
