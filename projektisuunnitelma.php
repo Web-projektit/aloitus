@@ -6,11 +6,12 @@
 <title>Web-ohjelmointikurssin aloitus</title>
 <meta name="description" content="Web-ohjelmointikurssin HTML-aloitus.">
 <meta name="author" content="Web-ohjelmoija">
+<!-- info sosiaalisen median linkkeihin -->
 <meta property="og:title" content="Web-ohjelmointikurssin aloitus">
 <meta property="og:type" content="web-sivu">
-<!--<meta property="og:url" content="http://127.0.0.1/aloitus/aloitus.html">-->
 <meta property="og:description" content="HTML-malli.">
 <!--<meta property="og:image" content="image.png">-->
+<!--<meta property="og:url" content="http://127.0.0.1/aloitus/aloitus.html">-->
 <link rel="stylesheet" href="site.css">
 <!--<script src="scripts.js"></script>-->
 </head>
