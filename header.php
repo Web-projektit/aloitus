@@ -14,12 +14,32 @@ function active($sivu,$active){
 <link rel="stylesheet" href="navbar.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
 <link rel="stylesheet" href="site.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <?php
 if (isset($css)) echo "<link rel='stylesheet' href='$css'>";
 if (isset($js)) echo "<script defer src='$js'></script>";
 ?>
 <title><?=$title?></title>
 <script>
+document.addEventListener('DOMContentLoaded', (function () {
+  'use strict'
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+})())
+
+
+
 </script>
 </head>
 <body>
@@ -30,7 +50,9 @@ if (isset($js)) echo "<script defer src='$js'></script>";
 <label for="toggle-btn" class="icon open"><i class="fa fa-bars"></i></label>
 <label for="toggle-btn" class="icon close"><i class="fa fa-times"></i></label>
 <?php
-echo "<a class='".active('index',$active). "' href='index.php'>Kotisivu</a>";
+echo "<a class='".active('index',$active). "' href='index.php'>Etusivu</a>";
+echo "<a class='".active('tuotteet',$active). "' href='tuotteet.php'>Tuotteet</a>";
+echo "<a class='".active('yhteydenotto',$active). "' href='yhteydenotto.php'>Ota yhteyttä</a>";
 echo "<a class='".active('sivumalli',$active). "' href='sivumalli.php'>Sivumalli</a>";
 /* Huom. tästä oikeaan laitaan. */
 echo "<a class='nav-suojaus ".active('phpinfo',$active). "' href='phpinfo.php'>phpinfo</a>";
