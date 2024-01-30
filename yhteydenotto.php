@@ -1,5 +1,6 @@
 <?php
 $title = "Ota yhteyttä";
+//$js = "scripts.js";
 include "header.php";
 /*
 - nimi
@@ -13,7 +14,7 @@ include "header.php";
 <h1>Yhteydenotto</h1>   
 <form class="mb-3 needs-validation" novalidate action="yhteydenotto.php" method="post">
 
-<div class="row">
+<div class="row mb-2">
 <label class="form-label col-sm-4" for="nimi">Nimi</label>
 <div class="col-sm-8">
 <input class="form-control" type="text" name="nimi" id="nimi" autofocus required>
@@ -23,7 +24,7 @@ Please choose a username.
 </div>
 </div>
 
-<div class="row">
+<div class="row mb-2">
 <label class="form-label col-sm-4" for="email">Sähköposti</label>
 <div class="col-sm-8">
 <input class="form-control" type="email" name="email" id="email" required>
@@ -33,7 +34,7 @@ Please give your email address.
 </div>
 </div>
 
-<div class="row">
+<div class="row mb-2">
 <label class="form-label col-sm-4" for="aihe">Aihe</label>
 <div class="col-sm-8">
 <select class="form-select" name="aihe" id="aihe">
@@ -45,14 +46,14 @@ Please give your email address.
 </div>
 </div>
 
-<div class="row">
+<div class="row mb-2">
 <label class="form-label col-sm-4" for="viesti">Viesti</label>
 <div class="col-sm-8">
 <textarea class="form-control" name="viesti" id="viesti" rows="5"></textarea>
 </div>
 </div>
 
-<div class="row">
+<div class="row mb-2">
 <div class="col-sm-4"></div>
 <div class="form-check col-sm-8">
 <input class="form-check-input" type="checkbox" name="uutiskirje" id="uutiskirje">
@@ -60,8 +61,8 @@ Please give your email address.
 </div>
 </div>
 
-<div class="col-12">
-<button class="btn btn-primary" type="submit">Lähetä</button>
+<div class="col-12 d-flex justify-content-end">
+<button class="btn btn-primary me-4" type="submit">Lähetä</button>
 </div>
 
 </form>
