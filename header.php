@@ -21,25 +21,23 @@ if (isset($js)) echo "<script defer src='$js'></script>";
 ?>
 <title><?=$title?></title>
 <script>
-window.onload = function () {
-    'use strict'
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-    console.log("forms: ",forms)
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-          form.classList.add('was-validated')
-          console.log("form was validated")
-        }, false)
-      })
-  }
 
+window.onload = function () {
+  'use strict'
+  var forms = document.querySelectorAll('.needs-validation')
+  // Huom. forEach-metodi toimii nodeListin kanssa v.2020 alkaen.
+  // Array.prototype.slice.call(forms)
+  forms.forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        /* Ei lomakkeen lähetystä, jos validointi ei mene läpi. */
+        event.preventDefault()
+        event.stopPropagation()
+        }
+      form.classList.add('was-validated')
+      }, false)
+    })
+  }
 </script>
 </head>
 <body>
