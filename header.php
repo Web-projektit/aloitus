@@ -21,15 +21,33 @@ if (isset($js)) echo "<script defer src='$js'></script>";
 ?>
 <title><?=$title?></title>
 <script>
+let poista_invalid = event => {
+  /* Oma kuuntelijafunktio, jotta kuuntelijan voi myös poistaa. */
+  const input = event.target
+  input.classList.remove('is-invalid')
+  input.removeEventListener('input', poista_invalid)
+  }
 
-window.onload = function () {
-  'use strict'
+window.onload = function () {'use strict'
   var forms = document.querySelectorAll('.needs-validation')
-  // Huom. forEach-metodi toimii nodeListin kanssa v.2020 alkaen.
-  // Array.prototype.slice.call(forms)
+  /* Huom. forEach-metodi toimii nodeListin kanssa v.2020 alkaen.
+     Array.prototype.slice.call(forms) */
   forms.forEach(function (form) {
-    form.addEventListener('submit', function (event) {
+    /* Kenttään kirjoitus poistaa virheilmoituksen palvelimelta. */
+    form.querySelectorAll('.is-invalid').forEach(input => {
+      input.addEventListener('input', poista_invalid)
+      })
+
+    form.addEventListener('submit', event => {
       if (!form.checkValidity()) {
+        
+        /* Oletusvirheilmoitustekstit Javascriptistä,
+           syrjäyttävät mahdolliset virheilmoitustekstit palvelimelta. */           
+        form.querySelectorAll('.invalid-feedback').forEach(element => {
+          const input = element.previousElementSibling
+          element.textContent = input.validationMessage
+          })
+
         /* Ei lomakkeen lähetystä, jos validointi ei mene läpi. */
         event.preventDefault()
         event.stopPropagation()

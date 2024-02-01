@@ -16,6 +16,24 @@ footer {
   padding: 5px;
 }
 
+form {
+  max-width: 700px;
+  margin: auto;
+}
+
+fieldset {
+  border: 2px groove; /* Oletusarvoinen reuna */
+  padding: 0.35em 0.625em 0.75em; /* Oletusarvoinen täyte */
+  margin: 0; /* Poista mahdolliset ylimääräiset marginaalit */
+}
+
+legend {
+  padding: 0; /* Oletusarvoinen täyte legend-elementille */
+  font-weight: normal; /* Oletusarvoinen fontin paino */
+}
+
+
+
 @media (min-width: 576px) {
   
 }
