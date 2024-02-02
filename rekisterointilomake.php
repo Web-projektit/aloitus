@@ -4,6 +4,7 @@ $virheilmoitukset = [];
 $virheilmoitukset['nimi'] = "Nimi saa sisältää vain kirjaimia, välilyöntejä, tavuviivoja ja heittomerkkejä.";  
 $virheilmoitukset['salasana'] = "Salasanassa tulee olla vähintään 12 merkkiä.";  
 $virheilmoitukset['sahkoposti'] = "Sähköpostiosoite ei ole oikeassa muodossa.";  
+$lomakekentat = ['nimi','sahkoposti','salasana','maakunta','lemmikit','kuvaus'];
 $pakolliset = ['nimi','sahkoposti','salasana','maakunta','lemmikit'];
 include "header.php";
 include "db.php";
@@ -48,7 +49,7 @@ function input_kentta($kentta,$type = 'text',$required = true,$autofocus = false
 $required = ($required) ? "required " : "";
 $autofocus = ($autofocus) ? "autofocus" : "";
 echo '<div class="row mb-2">';
-echo "<label class=\"form-label col-sm-4\" for=\"$kentta\">".ucfirst($kentta)."</label>";
+echo "<label class=\"form-label col-sm-3\" for=\"$kentta\">".ucfirst($kentta)."</label>";
 echo '<div class="col-sm-8">';
 echo '<input class="form-control'.is_invalid($kentta).
      "\" type=\"$type\" name=\"$kentta\" id=\"$kentta\"".
@@ -77,8 +78,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $virheet[$kentta] = true;
             $virheilmoitukset[$kentta] = "$kentta puuttuu.";
             }
-    foreach ($_POST as $kentta => $arvo) {
+    foreach ($lomakekentat as $kentta) {
         if (!$virheet[$kentta]){
+            $arvo = $_POST[$kentta] ?? "";
+            // ..jatkuu tästä..
             if (!is_array($arvo))
                 $$kentta = puhdista($yhteys, $arvo);
                 if (!validoi($kentta)) {
@@ -108,8 +111,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        */
 
     if (!$virheet) {
+        /* Salasanan hashaus, sijoita tämä arvot-taulukkoon oikein. */
         $salasana_hash = password_hash($salasana, PASSWORD_DEFAULT);            
-        $query = "INSERT INTO kayttajat (nimi, sahkoposti, salasana, maakunta, lemmikit, kuvaus) VALUES ('$nimi','$sahkoposti','$salasana_hash','$maakunta','$lemmikit','$kuvaus')";
+        $kenttanimet = implode(",",$lomakekentat);
+        $kenttaarvot = implode("','",$arvot);
+        $arvot = "'$nimi','$sahkoposti','$salasana_hash','$maakunta','$lemmikit','$kuvaus'";
+        $query = "INSERT INTO kayttajat ($kenttanimet) VALUES ('$kenttaarvot')";
         $result = query_oma($yhteys, $query);
         if ($result === true) echo "Käyttäjä lisätty.";
         else echo "Virhe: $query <br> $yhteys->error";
@@ -146,7 +153,7 @@ input_kentta('sahkoposti');
 input_kentta('salasana','password');
 ?>
 <div class="row mb-2">
-<label class="form-label col-sm-4" for="maakunta">Maakunta</label>
+<label class="form-label col-sm-3" for="maakunta">Maakunta</label>
 <div class="col-sm-8">
 <select class="form-select<?= is_invalid('maakunta'); ?>" 
        name="maakunta" id="maakunta">
@@ -163,7 +170,7 @@ foreach ($maakunnat as $maakunta) {
 </div>
 
 <div class="row mb-2">
-<label class="form-label col-sm-4" for="lemmikit">Lemmikit</label>
+<label class="form-label col-sm-3" for="lemmikit">Lemmikit</label>
 <div class="col-sm-8">
 <?php
 foreach ($lemmikit as $lemmikki) {

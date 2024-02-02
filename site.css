@@ -21,17 +21,37 @@ form {
   margin: auto;
 }
 
-fieldset {
-  border: 2px groove; /* Oletusarvoinen reuna */
-  padding: 0.35em 0.625em 0.75em; /* Oletusarvoinen täyte */
-  margin: 0; /* Poista mahdolliset ylimääräiset marginaalit */
+/*fieldset {
+  border: 2px groove; 
+  padding: 0.35em 0.625em 0.75em; 
+  margin: 0;
 }
 
 legend {
-  padding: 0; /* Oletusarvoinen täyte legend-elementille */
-  font-weight: normal; /* Oletusarvoinen fontin paino */
+  padding: 0; 
+  font-weight: normal; 
+}*/
+
+fieldset {
+  margin: 10px 0;
+  /*padding: 10px;*/
+  padding: 1.0em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
+legend {
+  font-size: 1.2em; 
+  color: #333;
+  float: none;
+  width: auto; 
+  padding: 0 10px;
+  margin-bottom: 0;
+}
+
+label {
+  color: darkblue;
+}
 
 
 @media (min-width: 576px) {
