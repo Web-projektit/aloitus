@@ -70,6 +70,7 @@ echo "<a class='".active('index',$active). "' href='index.php'>Etusivu</a>";
 echo "<a class='".active('tuotteet',$active). "' href='tuotteet.php'>Tuotteet</a>";
 echo "<a class='".active('yhteydenotto',$active). "' href='yhteydenotto.php'>Ota yhteyttä</a>";
 echo "<a class='".active('sivumalli',$active). "' href='sivumalli.php'>Sivumalli</a>";
+echo "<a class='".active('',$active). "' href='hakulomake.php'>Sakila-haku</a>";
 /* Huom. tästä oikeaan laitaan. */
 echo "<a class='nav-suojaus ".active('phpinfo',$active). "' href='phpinfo.php'>phpinfo</a>";
 ?>

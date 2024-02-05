@@ -184,7 +184,7 @@ foreach ($lemmikit as $lemmikki) {
 input_kentta('kuvaus','textarea',false);
 ?>
 
-<div class="col-12 d-flex justify-content-end">
+<div class="col-11 d-flex justify-content-end mt-4">
 <button class="btn btn-primary me-4" type="submit">Lähetä</button>
 </div>
 </fieldset>
