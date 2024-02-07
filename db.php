@@ -23,7 +23,8 @@ function query_oma ($yhteys, $query) {
 }
 
 function puhdista ($yhteys, $data) {
-/* Estää SQL-injektiot. */    
+/* Estää SQL-injektiot. */ 
+    if (is_array($data)) $data = implode(",",$data);    
     $data = strip_tags(trim($data));
     $data = $yhteys->real_escape_string($data);
     return $data;

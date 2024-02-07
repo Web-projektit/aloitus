@@ -37,7 +37,7 @@ if ($hakutulokset) {
     echo "<h2>Hakutulokset</h2>";
     echo "<div class='row'>";
     foreach ($hakutulokset as $elokuva) {
-        echo "<div class='col-4'>";
+        echo "<div class='flex-container'>";
         echo "<div class='card'>";
         //echo "<img src='img/$elokuva->img' class='card-img-top' alt='$elokuva->title'>";
         echo "<div class='card-body'>";

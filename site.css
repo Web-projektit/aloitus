@@ -53,6 +53,27 @@ label {
   color: darkblue;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Mahdollistaa elementtien siirtymisen seuraavalle riville, jos tila loppuu */
+  gap: 10px; /* Luo tilaa korttien välille */
+}
+
+/* Kortin tyylit */
+.flex-container {
+  width: 200px; /* Vakiokokoisen leveyden määrittäminen */
+  padding: 0;
+  margin: 0;
+  /* Lisää kortin tyylejä tarvittaessa */
+}
+
+.card {
+  border: 1px solid #ccc; /* Kortin reunan tyyli */
+  border-radius: 5px; /* Pyöristää kortin kulmat */
+  padding: 10px; /* Lisää tilaa kortin sisälle */
+  background-color: #f9f9f9; /* Kortin taustaväri */
+  width:100%;
+}
 
 @media (min-width: 576px) {
   

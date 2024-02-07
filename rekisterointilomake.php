@@ -8,64 +8,17 @@ $lomakekentat = ['nimi','sahkoposti','salasana','maakunta','lemmikit','kuvaus'];
 $pakolliset = ['nimi','sahkoposti','salasana','maakunta','lemmikit'];
 include "header.php";
 include "db.php";
+include "lomakerutiinit.php";
 $pattern = [];
 $virheet = [];
 
 $pattern['nimi'] = "/^[a-zA-ZåäöÅÄÖ'\- ]{1,50}$/";
-$pattern['salasana'] = "/^[^\s]{12,255}$/";   
-$pattern['sahkoposti'] = "/^[a-zA-Z_]+[\w.+-]*@[\w-]+(\.[\w-]{2,})?\.[a-zA-Z]{2,}$/";
+$pattern['salasana'] = "/^[^\s]{12,255}$/";
+/* Huom. HTML5-validointi ei tunne \w-lyhennysmerkkiä. */   
+$pattern['sahkoposti'] = "/^[a-zA-Z_]+[a-zA-Z0-9_\.+-]*@[a-zA-Z_]+(\.[a-zA-Z0-9_-]{2,})?\.[a-zA-Z]{2,}$/";
 
 //$virheet['nimi'] = true;
 
-function arvo($kentta) {
-if (!isset($GLOBALS['virheet'][$kentta])){
-    return $_POST[$kentta] ?? "";
-    }
-return "";
-}
-
-
-function is_invalid($kentta) {
-return (isset($GLOBALS['virheet'][$kentta])) ? " is-invalid" : "";
-}
-
-function virheilmoitus($kentta) {
-return $GLOBALS['virheilmoitukset'][$kentta] ?? "";
-}
-
-function pattern($kentta) {
-return (isset($GLOBALS['pattern'][$kentta])) ?  
-    "pattern=\"" . trim($GLOBALS['pattern'][$kentta],"/") . "\" " :
-    "";
-}
-
-function validoi($kentta,$arvo) {
-if (isset($GLOBALS['pattern'][$kentta]))     
-    return preg_match($GLOBALS['pattern'][$kentta], $arvo);
-else return true;
-}
-
-function input_kentta($kentta,$type = 'text',$required = true,$autofocus = false){
-$required = ($required) ? "required " : "";
-$autofocus = ($autofocus) ? "autofocus" : "";
-echo '<div class="row mb-2">';
-echo "<label class=\"form-label col-sm-3\" for=\"$kentta\">".ucfirst($kentta)."</label>";
-echo '<div class="col-sm-8">';
-echo '<input class="form-control'.is_invalid($kentta).
-     "\" type=\"$type\" name=\"$kentta\" id=\"$kentta\"".
-     pattern($kentta)."$autofocus $required".arvo($kentta).'>';
-echo '<div class="invalid-feedback">'.virheilmoitus($kentta).'</div>';
-echo '</div></div>';
-}
-
-function input_checkbox($kentta,$value,$label){
-$checked = (isset($_POST[$kentta]) && in_array($value,$_POST[$kentta])) ? " checked" : "";  
-echo '<div class="form-check">';
-echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"$value\" 
-      name=\"$kentta"."[]\" id=\"$kentta\" $checked>";
-echo "<label class=\"form-check-label\" for=\"$kentta\">$label</label>";
-echo '</div>';
-}
 
 $maakunnat = ['Uusimaa','Varsinais-Suomi','Satakunta','Kanta-Häme','Pirkanmaa','Päijät-Häme','Kymenlaakso','Etelä-Karjala','Etelä-Savo','Pohjois-Savo','Pohjois-Karjala','Keski-Suomi','Etelä-Pohjanmaa','Pohjanmaa','Keski-Pohjanmaa','Pohjois-Pohjanmaa','Kainuu','Lappi','Ahvenanmaa'];
 sort($maakunnat);
