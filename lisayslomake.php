@@ -28,7 +28,7 @@ foreach ($lomakekentat as $kentta) {
 input_kentta('title',required:$required['title'],autofocus:true);
 input_kentta('description','textarea',required:$required['description']);
 input_kentta('release_year');
-input_select('language_id',$kielioptiot);
+input_select('language_id',$kielioptiot,$required['language_id']);
 input_kentta('rental_duration');
 input_kentta('rental_rate');
 input_kentta('length');
@@ -61,11 +61,19 @@ foreach ($special_features as $feature) {
 </fieldset>
 </form>
 
-<div id="ilmoitukset" class="alert alert-<?= $success ;?> alert-dismissible fade show <?= $display ?? ""; ?>" role="alert">
-<p><?= $message; ?></p>
-<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-
+<?php   
+if (isset($_GET['message']) && isset($_GET['success'])) {
+    $display = "";
+    $message = $_GET['message'];
+    $success = $_GET['success'];
+    ?>
+    <div id="ilmoitukset" class="alert alert-<?= $success ;?> alert-dismissible fade show <?= $display ?? ""; ?>" role="alert">
+    <p><?= $message; ?></p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php   
+}
+?>
 </div>
 <?php
 include "footer.html";

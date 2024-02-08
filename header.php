@@ -1,4 +1,6 @@
 <?php
+include "asetukset.php";
+include "debuggeri_simple.php";
 $active = basename($_SERVER['PHP_SELF'],'.php');
 function active($sivu,$active){
     return $active == $sivu ? 'active' : '';  
@@ -70,7 +72,8 @@ echo "<a class='".active('index',$active). "' href='index.php'>Etusivu</a>";
 echo "<a class='".active('tuotteet',$active). "' href='tuotteet.php'>Tuotteet</a>";
 echo "<a class='".active('yhteydenotto',$active). "' href='yhteydenotto.php'>Ota yhteyttä</a>";
 echo "<a class='".active('sivumalli',$active). "' href='sivumalli.php'>Sivumalli</a>";
-echo "<a class='".active('',$active). "' href='hakulomake.php'>Sakila-haku</a>";
+echo "<a class='".active('hakulomake',$active). "' href='hakulomake.php'>Sakila-haku</a>";
+echo "<a class='".active('lisayslomake',$active). "' href='lisayslomake.php'>Sakila-lisäys</a>";
 /* Huom. tästä oikeaan laitaan. */
 echo "<a class='nav-suojaus ".active('phpinfo',$active). "' href='phpinfo.php'>phpinfo</a>";
 ?>

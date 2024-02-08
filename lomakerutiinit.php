@@ -58,6 +58,10 @@ function arvo($kentta) {
         return $tulos;
         }
     
+    function desimaali($kentta) {
+    return str_replace(",",".",$kentta);
+    }
+
 
     function input_kentta($kentta,$type = 'text',$required = true,$autofocus = false){
     /**
@@ -71,14 +75,14 @@ function arvo($kentta) {
      * @return void Outputs the HTML for the input field.
      */
     
-    $required = ($required) ? "required " : "";
+    $required = ($required) ? "required" : "";
     $autofocus = ($autofocus) ? "autofocus" : "";
     echo '<div class="row mb-2">';
     echo "<label class=\"form-label col-sm-3\" for=\"$kentta\">".ucfirst($kentta)."</label>";
     echo '<div class="col-sm-8">';
     echo '<input class="form-control'.is_invalid($kentta).
          "\" type=\"$type\" name=\"$kentta\" id=\"$kentta\"".
-         pattern($kentta)."$autofocus $required".arvo($kentta).'>';
+         pattern($kentta)."$autofocus $required value=\"".arvo($kentta)."\">";
     echo '<div class="invalid-feedback">'.virheilmoitus($kentta).'</div>';
     echo '</div></div>';
     }
@@ -120,7 +124,7 @@ function arvo($kentta) {
     echo '</div>';
     }
 
-    function input_select($kentta,$optiot){
+    function input_select($kentta,$optiot,$required = false){
     /**
      * This function generates an HTML select field with certain attributes.
      * 
@@ -129,11 +133,12 @@ function arvo($kentta) {
      * 
      * @return void Outputs the HTML for the input field.
      */
+    $required = ($required) ? "required" : "";
     echo '<div class="row mb-2">';
     echo "<label class=\"form-label col-sm-3\" for=\"$kentta\">".ucfirst($kentta)."</label>";
     echo '<div class="col-sm-8">';
     echo "<select class=\"form-select".is_invalid($kentta)."\" 
-          name=\"$kentta\" id=\"$kentta\">";
+          name=\"$kentta\" id=\"$kentta\" $required>";
     echo "<option value=\"\">Valitse $kentta</option>";
     foreach ($optiot as $value => $optio) {
         $selected = ($optio == arvo($kentta)) ? " selected" : "";
@@ -142,4 +147,22 @@ function arvo($kentta) {
     echo '</select>';
     echo '<div class="invalid-feedback">'.virheilmoitus($kentta).'</div>';
     echo '</div></div>';
+    }
+
+    function input_datalist($kentta,$optiot,$required = false){
+    /**
+     * This function generates an HTML datalist field with certain attributes.
+     * 
+     * @param string $kentta The name, id, and label for the input field.
+     * @param array $optiot An array of options for the datalist field.
+     * 
+     * @return void Outputs the HTML for the input field.
+     * Mukana selaimen validointi, palvelimen validointi, virheilmoitukset ja vanhan arvon muistaminen:
+     * 
+     * pattern($kentta)
+     * is_invalid($kentta)
+     * virheilmoitus($kentta)
+     * arvo($kentta)
+     */    
+    $required = ($required) ? "required" : "";
     }
