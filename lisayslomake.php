@@ -1,8 +1,11 @@
 <?php
+$title = "Elokuvan lisääminen";
+$js = "lisays.js";
 include 'db.php';
 include 'header.php';
 include 'lomakerutiinit.php';
 include 'lisays.php';
+
 
 $kielioptiot = [];
 $query = "SELECT language_id, name FROM language";
@@ -18,7 +21,7 @@ $special_features = ['Trailers','Commentaries','Deleted Scenes','Behind the Scen
 ?>
 
 <div class="container" id="root">
-<form class="mb-3 needs-validation" novalidate action="lisayslomake.php" method="post">
+<form class="mb-3 needs-validation" novalidate action="lisayslomake.php" method="post" enctype="multipart/form-data">
 <fieldset>
 <legend>Elokuvan lisääminen</legend>
 <?php   
@@ -28,7 +31,7 @@ foreach ($lomakekentat as $kentta) {
 input_kentta('title',required:$required['title'],autofocus:true);
 input_kentta('description','textarea',required:$required['description']);
 input_kentta('release_year');
-input_select('language_id',$kielioptiot,$required['language_id']);
+input_datalist('language_id',$kielioptiot,$required['language_id'],'language');
 input_kentta('rental_duration');
 input_kentta('rental_rate');
 input_kentta('length');
@@ -54,6 +57,16 @@ foreach ($special_features as $feature) {
 ?>
 </div>
 </div>
+
+<div class="row mb-3">
+    <label for="image" class="col-sm-3 form-label">Lisää kuva</label>
+    <div class="col-sm-8">
+        <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="previewImage(event)">
+        <img id="preview" src="" alt="Image preview" style="max-width: 200px; max-height: 200px; display: none;">
+        <button type="button" id="clearButton" style="display: none;" onclick="clearImage()">Tyhjennä kuva</button>
+    </div>
+</div>
+
 
 <div class="col-11 d-flex justify-content-end mt-4">
 <button name='button' class="btn btn-primary me-4" type="submit">Lisää</button>

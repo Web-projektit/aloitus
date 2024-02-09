@@ -149,20 +149,34 @@ function arvo($kentta) {
     echo '</div></div>';
     }
 
-    function input_datalist($kentta,$optiot,$required = false){
-    /**
-     * This function generates an HTML datalist field with certain attributes.
-     * 
-     * @param string $kentta The name, id, and label for the input field.
-     * @param array $optiot An array of options for the datalist field.
-     * 
-     * @return void Outputs the HTML for the input field.
-     * Mukana selaimen validointi, palvelimen validointi, virheilmoitukset ja vanhan arvon muistaminen:
-     * 
-     * pattern($kentta)
-     * is_invalid($kentta)
-     * virheilmoitus($kentta)
-     * arvo($kentta)
-     */    
-    $required = ($required) ? "required" : "";
+    
+    function input_datalist($kentta,$optiot,$required = false,$label = ""){
+        /**
+         * This function generates an HTML datalist field with certain attributes.
+         *
+         * @param string $kentta The name, id, and label for the input field.
+         * @param array $optiot An array of options for the datalist field.
+         *
+         * @return void Outputs the HTML for the input field.
+         * Mukana selaimen validointi, palvelimen validointi, virheilmoitukset ja vanhan arvon muistaminen:
+         *
+         * pattern($kentta)
+         * is_invalid($kentta)
+         * virheilmoitus($kentta)
+         * arvo($kentta)
+         */    
+        $required = ($required) ? "required " : "";
+
+        echo '<div class="row mb-2">';
+        echo "<label class=\"form-label col-sm-3\" for=\"$kentta\">".ucfirst($label)."</label>";
+        echo '<div class="col-sm-8">';
+        echo "<input list=\"$kentta\" class=\"form-control".is_invalid($kentta).
+        "\" type=\"text\" name=\"$kentta\" $required".is_invalid($kentta).pattern($kentta)." value=\"".arvo($kentta)."\">";
+        echo '<div class="invalid-feedback">'.virheilmoitus($kentta).'</div>';
+        echo "<datalist id=\"$kentta\">";
+        foreach ($optiot as $optio) {
+            echo "<option value=\"$optio\">";   
+            }
+        echo "</datalist>";
+        echo '</div></div>';
     }
