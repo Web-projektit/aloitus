@@ -121,3 +121,689 @@ Unknown column 'id' in 'field list'
 2024-02-09 10:29:16 SELECT 1 FROM film WHERE title = 'Uuno Espanjassa' AND language_id = 9 LIMIT 1
 2024-02-09 10:29:16 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features) VALUES ('Uuno Espanjassa','','2000',9,'7','5.1','180','10.5','G','Trailers')
 2024-02-09 10:29:16 result:1, affected_rows:1
+2024-02-12 08:41:42 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'Finnish\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'PG\'',
+  'special_features' => '\'Trailers,Commentaries\'',
+)
+2024-02-12 08:41:42 INSERT INTO language (name) VALUES ('Finnish') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 08:41:42 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 9 LIMIT 1
+2024-02-12 08:41:42 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',9,'7','5.1','180','10.5','PG','Trailers,Commentaries','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes.png')
+2024-02-12 08:41:42 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',9,'7','5.1','180','10.5','PG','Trailers,Commentaries','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes.png'):
+Unknown column 'image' in 'field list'
+2024-02-12 08:41:42 result:, affected_rows:-1
+2024-02-12 08:51:34 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'Finnish\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'PG\'',
+  'special_features' => '\'Commentaries\'',
+)
+2024-02-12 08:51:34 INSERT INTO language (name) VALUES ('Finnish') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 08:51:34 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 9 LIMIT 1
+2024-02-12 08:51:34 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',9,'7','5.1','180','10.5','PG','Commentaries','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes.png')
+2024-02-12 08:51:34 result:1, affected_rows:1
+2024-02-12 09:08:36 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'English\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'R\'',
+  'special_features' => '\'Trailers,Commentaries\'',
+)
+2024-02-12 09:08:36 INSERT INTO language (name) VALUES ('English') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 09:08:36 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 1 LIMIT 1
+2024-02-12 09:08:36 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',1,'7','5.1','180','10.5','R','Trailers,Commentaries','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_0ac636.')
+2024-02-12 09:08:36 result:1, affected_rows:1
+2024-02-12 09:13:58 array (
+)
+2024-02-12 09:17:18 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+  'special_features' => 'Kenttä Special_features on pakollinen',
+)
+2024-02-12 09:17:18 array (
+)
+2024-02-12 09:20:06 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+  'special_features' => 'Kenttä Special_features on pakollinen',
+)
+2024-02-12 09:20:06 array (
+)
+2024-02-12 09:23:02 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+  'special_features' => 'Kenttä Special_features on pakollinen',
+)
+2024-02-12 09:23:02 array (
+)
+2024-02-12 09:23:06 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+  'special_features' => 'Kenttä Special_features on pakollinen',
+)
+2024-02-12 09:23:06 array (
+)
+2024-02-12 09:25:58 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+  'special_features' => 'Kenttä Special_features on pakollinen',
+)
+2024-02-12 09:25:58 array (
+)
+2024-02-12 09:26:01 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+  'special_features' => 'Kenttä Special_features on pakollinen',
+)
+2024-02-12 09:26:01 array (
+)
+2024-02-12 09:41:12 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+)
+2024-02-12 09:41:12 array (
+)
+2024-02-12 09:41:23 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+)
+2024-02-12 09:41:23 array (
+)
+2024-02-12 09:44:04 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+)
+2024-02-12 09:44:04 array (
+)
+2024-02-12 09:50:40 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+)
+2024-02-12 09:50:40 array (
+)
+2024-02-12 09:52:02 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+)
+2024-02-12 09:52:02 array (
+)
+2024-02-12 09:58:48 array (
+  'rating' => 'Kenttä Rating on pakollinen',
+)
+2024-02-12 09:58:48 array (
+)
+2024-02-12 09:59:19 array (
+)
+2024-02-12 09:59:19 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 09:59:19 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 09:59:19 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 09:59:19 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_b7cf4d.png')
+2024-02-12 09:59:19 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_b7cf4d.png'):
+Column count doesn't match value count at row 1
+2024-02-12 09:59:19 result:, affected_rows:-1
+2024-02-12 10:13:56 array (
+)
+2024-02-12 10:13:56 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:13:56 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:13:57 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 10:13:57 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_bd9600.png')
+2024-02-12 10:13:57 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_bd9600.png'):
+Column count doesn't match value count at row 1
+2024-02-12 10:13:57 result:, affected_rows:-1
+2024-02-12 10:13:57 array (
+)
+2024-02-12 10:14:19 array (
+)
+2024-02-12 10:14:19 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:14:19 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:14:19 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 10:14:19 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_b3b581.png')
+2024-02-12 10:14:19 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_b3b581.png'):
+Column count doesn't match value count at row 1
+2024-02-12 10:14:19 result:, affected_rows:-1
+2024-02-12 10:14:19 array (
+)
+2024-02-12 10:17:08 array (
+)
+2024-02-12 10:17:08 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:17:08 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:17:08 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 10:17:08 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_136f3b.png')
+2024-02-12 10:17:08 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_136f3b.png'):
+Column count doesn't match value count at row 1
+2024-02-12 10:17:08 result:, affected_rows:-1
+2024-02-12 10:21:22 array (
+)
+2024-02-12 10:21:22 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 10:21:22 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:21:22 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:21:22 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 10:28:15 array (
+)
+2024-02-12 10:28:15 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 10:28:15 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:28:15 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:28:15 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 10:28:18 array (
+)
+2024-02-12 10:28:18 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 10:28:18 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:28:18 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:28:18 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 10:28:24 array (
+)
+2024-02-12 10:28:24 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 10:28:24 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:28:24 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:28:24 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 10:28:24 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_53d05d.png')
+2024-02-12 10:28:24 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_53d05d.png'):
+Column count doesn't match value count at row 1
+2024-02-12 10:28:24 result:, affected_rows:-1
+2024-02-12 10:28:31 array (
+)
+2024-02-12 10:28:31 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 10:28:31 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:28:31 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:28:31 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 10:28:31 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_7444c4.png')
+2024-02-12 10:28:31 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_7444c4.png'):
+Column count doesn't match value count at row 1
+2024-02-12 10:28:31 result:, affected_rows:-1
+2024-02-12 10:28:34 array (
+)
+2024-02-12 10:28:34 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 10:28:34 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 10:28:34 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 10:28:34 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:31:47 array (
+)
+2024-02-12 11:31:47 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 11:31:47 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:31:47 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:31:47 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:31:47 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_b645f3.png')
+2024-02-12 11:31:47 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_b645f3.png'):
+Column count doesn't match value count at row 1
+2024-02-12 11:31:47 result:, affected_rows:-1
+2024-02-12 11:31:53 array (
+)
+2024-02-12 11:31:53 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 11:31:53 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:31:53 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:31:53 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:33:27 array (
+)
+2024-02-12 11:33:27 Puuttuu:special_features
+2024-02-12 11:33:27 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 11:33:27 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:33:27 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:33:27 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:33:27 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_83f38f.png')
+2024-02-12 11:33:27 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_83f38f.png'):
+Column count doesn't match value count at row 1
+2024-02-12 11:33:27 result:, affected_rows:-1
+2024-02-12 11:33:30 array (
+)
+2024-02-12 11:33:30 Puuttuu:special_features
+2024-02-12 11:33:30 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 11:33:30 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:33:30 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:33:30 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:34:57 array (
+)
+2024-02-12 11:34:57 Puuttuu:special_features
+2024-02-12 11:34:57 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 11:34:57 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:34:57 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:34:57 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:34:57 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_106c96.png')
+2024-02-12 11:34:57 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_106c96.png'):
+Column count doesn't match value count at row 1
+2024-02-12 11:34:57 result:, affected_rows:-1
+2024-02-12 11:34:59 array (
+)
+2024-02-12 11:34:59 Puuttuu:special_features
+2024-02-12 11:34:59 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 11:34:59 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:34:59 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:34:59 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:35:58 array (
+)
+2024-02-12 11:35:58 Puuttuu:special_features
+2024-02-12 11:35:58 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 11:35:58 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:35:58 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:35:58 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:35:58 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_f42cdd.png')
+2024-02-12 11:35:58 Virhe kyselyssä INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_f42cdd.png'):
+Column count doesn't match value count at row 1
+2024-02-12 11:35:58 result:, affected_rows:-1
+2024-02-12 11:36:01 array (
+)
+2024-02-12 11:36:01 Puuttuu:special_features
+2024-02-12 11:36:01 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+  9 => 'special_features',
+)
+2024-02-12 11:36:01 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:36:01 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:36:01 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:41:36 array (
+)
+2024-02-12 11:41:36 array (
+  0 => 'title',
+  1 => 'description',
+  2 => 'release_year',
+  3 => 'language_id',
+  4 => 'rental_duration',
+  5 => 'rental_rate',
+  6 => 'length',
+  7 => 'replacement_cost',
+  8 => 'rating',
+)
+2024-02-12 11:41:36 array (
+  'title' => '\'Uuno sekoilee\'',
+  'description' => '\'\'',
+  'release_year' => '\'2000\'',
+  'language_id' => '\'French\'',
+  'rental_duration' => '\'7\'',
+  'rental_rate' => '\'5,1\'',
+  'length' => '\'180\'',
+  'replacement_cost' => '\'10,5\'',
+  'rating' => '\'G\'',
+)
+2024-02-12 11:41:36 INSERT INTO language (name) VALUES ('French') 
+                  ON DUPLICATE KEY UPDATE language_id=LAST_INSERT_ID(language_id)
+2024-02-12 11:41:36 SELECT 1 FROM film WHERE title = 'Uuno sekoilee' AND language_id = 5 LIMIT 1
+2024-02-12 11:41:36 INSERT INTO film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,image) VALUES ('Uuno sekoilee','','2000',5,'7','5.1','180','10.5','G','DALL·E 2023-10-23 16.36.59 - Illustration of a teacher pointing to a web page layout on a whiteboard while a group of students of various descents watch attentively, taking notes_64fcb8.png')
+2024-02-12 11:41:36 result:1, affected_rows:1
+2024-02-12 12:20:43 label:
+2024-02-12 12:20:43 label:
+2024-02-12 12:20:43 label:
+2024-02-12 12:20:43 label:
+2024-02-12 12:20:43 label:
+2024-02-12 12:20:43 label:Salasana uudestaan
+2024-02-12 12:23:43 label:,kentta:firstname
+2024-02-12 12:23:43 label:,kentta:lastname
+2024-02-12 12:23:43 label:,kentta:email
+2024-02-12 12:23:43 label:,kentta:phonenumber
+2024-02-12 12:23:43 label:,kentta:password
+2024-02-12 12:23:43 label:Salasana uudestaan,kentta:password2
+2024-02-12 12:41:22 label:,kentta:firstname
+2024-02-12 12:41:22 label:,kentta:lastname
+2024-02-12 12:41:22 label:,kentta:email
+2024-02-12 12:41:22 label:,kentta:phonenumber
+2024-02-12 12:41:22 label:,kentta:password
+2024-02-12 12:41:22 label:Salasana uudestaan,kentta:password2
+2024-02-12 12:56:41 label:,kentta:firstname
+2024-02-12 12:56:41 label:,kentta:lastname
+2024-02-12 12:56:41 label:,kentta:email
+2024-02-12 12:56:41 label:,kentta:phonenumber
+2024-02-12 12:56:41 label:,kentta:password
+2024-02-12 12:56:41 label:Salasana uudestaan,kentta:password2
+2024-02-12 12:57:18 label:,kentta:firstname
+2024-02-12 12:57:18 label:,kentta:lastname
+2024-02-12 12:57:18 label:,kentta:email
+2024-02-12 12:57:18 label:,kentta:phonenumber
+2024-02-12 12:57:18 label:,kentta:password
+2024-02-12 12:57:18 label:Salasana uudestaan,kentta:password2

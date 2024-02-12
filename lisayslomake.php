@@ -42,7 +42,7 @@ input_kentta('replacement_cost');
 <div class="col-sm-8">    
 <?php
 foreach ($ratingoptiot as $rating) {
-    input_radio('rating',$rating,$rating);
+    input_radio('rating',$rating,$rating,required:$required['rating']);
     }
 ?>
 </div>
@@ -54,6 +54,7 @@ foreach ($ratingoptiot as $rating) {
 foreach ($special_features as $feature) {
     input_checkbox('special_features',$feature,$feature);
     }
+echo '<div class="invalid-feedback">'.virheilmoitus('rating').'</div>';
 ?>
 </div>
 </div>
@@ -62,7 +63,8 @@ foreach ($special_features as $feature) {
     <label for="image" class="col-sm-3 form-label">Lisää kuva</label>
     <div class="col-sm-8">
         <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="previewImage(event)">
-        <img id="preview" src="" alt="Image preview" style="max-width: 200px; max-height: 200px; display: none;">
+        <div class="invalid-feedback"><?= virheilmoitus('image') ?></div>
+        <img class="mt-3" id="preview" src="" alt="Image preview" style="max-width: 200px; max-height: 200px; display: none;">
         <button type="button" id="clearButton" style="display: none;" onclick="clearImage()">Tyhjennä kuva</button>
     </div>
 </div>

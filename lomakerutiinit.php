@@ -1,4 +1,8 @@
 <?php
+function randomString($length = 3){
+    return bin2hex(random_bytes($length));
+    }
+
 function arvo($kentta) {
     /* Muistaa lomakkeen kentän vanhan arvon, jos sellainen on. */
     if (!isset($GLOBALS['virheet'][$kentta])){
@@ -63,7 +67,7 @@ function arvo($kentta) {
     }
 
 
-    function input_kentta($kentta,$type = 'text',$required = true,$autofocus = false){
+    function input_kentta($kentta,$type = 'text',$required = true,$autofocus = false, $label = ""){
     /**
      * This function generates an HTML input field with certain attributes.
      * 
@@ -74,11 +78,13 @@ function arvo($kentta) {
      * 
      * @return void Outputs the HTML for the input field.
      */
-    
+    debuggeri("label:$label,kentta:$kentta");
+    $label = $label ? $label : $kentta;
+    //$label ?: $kentta;  
     $required = ($required) ? "required" : "";
     $autofocus = ($autofocus) ? "autofocus" : "";
     echo '<div class="row mb-2">';
-    echo "<label class=\"form-label col-sm-3\" for=\"$kentta\">".ucfirst($kentta)."</label>";
+    echo "<label class=\"form-label col-sm-3\" for=\"$kentta\">".ucfirst($label)."</label>";
     echo '<div class="col-sm-8">';
     echo '<input class="form-control'.is_invalid($kentta).
          "\" type=\"$type\" name=\"$kentta\" id=\"$kentta\"".
@@ -106,7 +112,7 @@ function arvo($kentta) {
     }
     
 
-    function input_radio($kentta,$value,$label){    
+    function input_radio($kentta,$value,$label,$required){    
     /**
      * This function generates an HTML radio button with certain attributes.
      * 
@@ -116,10 +122,11 @@ function arvo($kentta) {
      * 
      * @return void Outputs the HTML for the input field.
      */
+    $required = ($required) ? "required" : "";
     $checked = (isset($_POST[$kentta]) && $_POST[$kentta] == $value) ? " checked" : ""; 
     echo '<div class="form-check">';
     echo "<input class=\"form-check-input\" type=\"radio\" value=\"$value\" 
-          name=\"$kentta\" id=\"$kentta\" $checked>";
+          name=\"$kentta\" id=\"$kentta\" $checked $required>";
     echo "<label class=\"form-check-label\" for=\"$kentta\">$label</label>";
     echo '</div>';
     }

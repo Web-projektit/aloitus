@@ -9,7 +9,7 @@ $numeeriset = [];
 $arvot = [];
 
 $lomakekentat = ['title', 'description', 'release_year', 'language_id', 'rental_duration', 'rental_rate', 'length', 'replacement_cost', 'rating', 'special_features'];
-$pakolliset = ['title', 'release_year', 'language_id', 'rental_duration', 'rental_rate', 'length', 'replacement_cost', 'rating', 'special_features'];
+$pakolliset = ['title', 'release_year', 'language_id', 'rental_duration', 'rental_rate', 'length', 'replacement_cost', 'rating'];
 $numeeriset = ['rental_duration', 'rental_rate', 'length', 'replacement_cost']; 
 $pattern['title'] = "/^[a-zåäöA-ZÅÄÖ0-9\s\-\.\,\!\?]{1,50}$/";
 $pattern['description'] = "/^[a-zåäöA-ZÅÄÖ0-9\s\-\.\,\!\?]{0,255}$/";
@@ -28,12 +28,12 @@ if (isset($_POST['button'])) {
     foreach ($lomakekentat as $kentta) {
         if (in_array($kentta, $pakolliset) && (!isset($_POST[$kentta]) || empty($_POST[$kentta]))) {
             $virheet[$kentta] = true;
-            $virheilmoitukset[$kentta] = "Kenttä ".ucfirst($kentta)." on pakollinen";
-            }
+            $virheilmoitukset[$kentta] = "Kenttä ".ucfirst($kentta)." on pakollinen";  
         }
- 
+     }
+    debuggeri($virheilmoitukset);    
     if (!$virheet) {
-        foreach ($lomakekentat as $kentta) {
+        foreach ($lomakekentat as $indeksi => $kentta) {
             if (isset($_POST[$kentta])) {
                 if (validoi($kentta,$_POST[$kentta])) {
                     $arvot[$kentta] = "'".puhdista($yhteys, $_POST[$kentta])."'";
@@ -43,9 +43,14 @@ if (isset($_POST['button'])) {
                     $virheilmoitukset[$kentta] = "Kenttä ".ucfirst($kentta)." on virheellinen";
                     }
                 }
+            else {
+               //debuggeri("Puuttuu:$kentta"); 
+               unset($lomakekentat[$indeksi]);
+               }
             }
         }    
 
+    debuggeri($lomakekentat); 
     debuggeri($arvot);
     if (empty($virheet)) {
         $language_id = "";
@@ -77,30 +82,43 @@ if (isset($_POST['button'])) {
         }
 
     // Tarkista, onko tiedosto lähetetty
-    if(isset($_FILES['image'])) {
+    if(empty($virheet) && isset($_FILES['image'])) {
         $errors = array();
-        $file_name = $_FILES['image']['name'];
+        $random = randomString(3);
+        //$file_name = $_FILES['image']['name'];
         $file_size = $_FILES['image']['size'];
         $file_tmp = $_FILES['image']['tmp_name'];
         $file_type = $_FILES['image']['type'];
-        $file_ext = strtolower(end(explode('.', $_FILES['image']['name'])));
-
+        //$file_ext = strtolower(end(explode('.', $_FILES['image']['name'])));
+        $pathinfo = pathinfo($_FILES['image']["name"]);
+        $file_ext = strtolower($pathinfo['extension']);
+        $image = $pathinfo['filename']."_$random.$file_ext";
+   
         $extensions = array("jpeg", "jpg", "png");
 
+        if (!$check = getimagesize($file_tmp)) {
+            $virheilmoitukset['image'] = "Kuva ei kelpaa.";
+            $virheet['image'] = true;
+           }
+      
         // Tarkista tiedostotyyppi
-        if(in_array($file_ext, $extensions) === false){
-            $errors[] = "extension not allowed, please choose a JPEG or PNG file.";
+        if(!$virheet && in_array($file_ext, $extensions) === false){
+            $virheilmoitukset['image'] = "extension not allowed, please choose a JPEG or PNG file.";
+            $virheet['image'] = true;
         }
 
         // Tarkista tiedoston koko (2MB)
-        if($file_size > 2097152){
-            $errors[] = 'File size must be less than 2 MB';
+        if(!$virheet && $file_size > MAKSIMI_KUVAKOKO){
+            $virheilmoitukset['image'] = 'File size must be less than 2 MB';
+            $virheet['image'] = true;
         }
 
         // Jos ei ole virheitä, siirrä tiedosto ja päivitä tietokanta
-        if(empty($errors) == true) {
-            move_uploaded_file($file_tmp, "images/".$file_name);
-            echo "Success";
+        if(!isset($virheilmoitukset['image'])) {
+            $lomakekentat[] = 'image';
+            $arvot['image'] = "'$image'";
+            move_uploaded_file($file_tmp, "kuvat/".$image);
+            //echo "Success";
 
             // Päivitä tietokanta
             /*
@@ -131,14 +149,15 @@ if (isset($_POST['button'])) {
         if ($result) {
             $message = "Elokuvan $title tiedot lisättiin tietokantaan";
             $success = "success";
+            header("Location: ./lisayslomake.php?message=$message&success=$success");
             }  
         else {
             $message = "Elokuvan $title lisäys epäonnistui. Tarkista tiedot ja yritä uudelleen.";   
             $success = "danger";
             }
         $display = "";
-        header("Location: ./lisayslomake.php?message=$message&success=$success");
         }
     }
 }
+
 ?>

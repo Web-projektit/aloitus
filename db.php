@@ -23,7 +23,7 @@ function query_oma($yhteys, $query) {
             debuggeri("Virhe kyselyssä $query:\n".$e->getMessage());
             }
         else {
-           echo "Virhe tai poikkeus nappattu: " . $e->getMessage();
+           echo "Virhe tai poikkeus napattu: " . $e->getMessage();
            debuggeri("Virhe kyselyssä $query:\n".$e->getMessage());
             }
         return false;
