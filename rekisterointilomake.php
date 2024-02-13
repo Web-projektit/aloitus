@@ -1,12 +1,14 @@
 <?php
 $title = "Rekisteröityminen";
 $js = "rekisterointi.js";
-include 'db.php';
+$lomakekentat = ['firstname', 'lastname', 'email', 'password', 'mobilenumber'];
+$pakolliset = ['firstname', 'lastname', 'email', 'password'];
 include 'header.php';
+include 'db.php';
 include 'lomakerutiinit.php';
+include 'posti.php';
 include 'rekisterointi.php';
 ?>
-
 <div class="container" id="root">
 <form id="rekisterointilomake" class="mb-3 needs-validation" novalidate action="rekisterointilomake.php" method="post" enctype="multipart/form-data">
 <fieldset>
@@ -15,10 +17,11 @@ include 'rekisterointi.php';
 foreach ($lomakekentat as $kentta) {
     $required[$kentta] = in_array($kentta, $pakolliset) ? true : false;
     }
+debuggeri($required);    
 input_kentta('firstname',required:$required['firstname'],autofocus:true);
 input_kentta('lastname',required:$required['lastname']);
 input_kentta('email',required:$required['email']);
-input_kentta('phonenumber',required:$required['phonenumber']);
+input_kentta('mobilenumber',required:$required['mobilenumber']);
 input_kentta('password',type:"password",required:$required['password']);
 input_kentta('password2',type:"password",required:$required['password'],label:"Salasana uudestaan");
 ?>

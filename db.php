@@ -1,9 +1,5 @@
 <?php
-$palvelin = "localhost";
-$kayttaja = "root";  
-$salasana = "jukka1";
-$tietokanta = "sakila";
-$yhteys = new mysqli($palvelin, $kayttaja, $salasana, $tietokanta);
+$yhteys = new mysqli($db_server, $db_username, $db_password, $DB);
 if ($yhteys->connect_error) {
     die("Yhteyden muodostaminen epäonnistui: " . $yhteys->connect_error);
     }
@@ -19,11 +15,11 @@ function query_oma($yhteys, $query) {
     catch (Throwable $e) {
         if ($yhteys->errno === 1062) {
             // Handle the duplicate entry scenario
-            echo "Samat tiedot ovat jo olemassa. Yritä uudelleen.";
+            echo "Samat tiedot ovat jo olemassa. Yritä uudelleen.<br>";
             debuggeri("Virhe kyselyssä $query:\n".$e->getMessage());
             }
         else {
-           echo "Virhe tai poikkeus napattu: " . $e->getMessage();
+           echo "Virhe tai poikkeus napattu: " . $e->getMessage() . "<br";
            debuggeri("Virhe kyselyssä $query:\n".$e->getMessage());
             }
         return false;

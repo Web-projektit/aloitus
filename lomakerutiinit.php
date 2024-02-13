@@ -78,7 +78,6 @@ function arvo($kentta) {
      * 
      * @return void Outputs the HTML for the input field.
      */
-    debuggeri("label:$label,kentta:$kentta");
     $label = $label ? $label : $kentta;
     //$label ?: $kentta;  
     $required = ($required) ? "required" : "";

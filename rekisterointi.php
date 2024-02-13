@@ -7,14 +7,12 @@ $virheilmoitukset = [];
 $pattern = [];
 $numeeriset = [];
 $arvot = [];
-
-$lomakekentat = ['firstname', 'lastname', 'email', 'password', 'phonenumber'];
-$pakolliset = ['firstname', 'lastname', 'email', 'password'];
+$lisays = $lisattiin_token = $lahetetty = 0;
 $pattern['firstname'] = "/^[a-zåäöA-ZÅÄÖ0'\- ]{1,25}$/";
 $pattern['lastname'] = "/^[a-zåäöA-ZÅÄÖ0'\- ]{1,50}$/";
 $pattern['password'] = "/^.{12,}$/";
 $pattern['password2'] = $pattern['password'];
-$pattern['phonenumber'] = "/^[0-9]{7,15}$/";
+$pattern['mobilenumber'] = "/^[0-9]{7,15}$/";
 $pattern['email'] = "/^[a-zA-Z_]+[a-zA-Z0-9_\.+-]*@[a-zA-Z_]+(\.[a-zA-Z0-9_-]{2,})?\.[a-zA-Z]{2,}$/";
 
 if (isset($_POST['button'])) {
@@ -77,7 +75,7 @@ if (isset($_POST['button'])) {
         $result = query_oma($yhteys,$query);
         debuggeri("result:$result, affected_rows:".$yhteys->affected_rows);
         $lisays = $yhteys->affected_rows;
-        if ($lisays) {
+        if ($lisays > 0) {
             /*
             CREATE TABLE signup_tokens (
             token VARCHAR(255) NOT NULL,
@@ -94,7 +92,7 @@ if (isset($_POST['button'])) {
             $result = query_oma($yhteys,$query);
             $lisattiin_token = $yhteys->affected_rows;
             }
-        if ($lisattiin_token) {
+        if ($lisattiin_token > 0) {
             $msg = "Vahvista sähköpostiosoitteesi alla olevasta linkistä:<br><br>";
             $msg.= "<a href='http://$PALVELIN/$PALVELU/$LINKKI_VERIFICATION?token=$token'>Vahvista sähköpostiosoite</a>";
             $msg.= "<br><br>t. $PALVELUOSOITE";
@@ -102,8 +100,8 @@ if (isset($_POST['button'])) {
             $lahetetty = posti(trim($email,"'"),$msg,$subject);
             }   
         if ($lahetetty){
-            $message = "Tiedot on tallennettu. Sinulle on lähetty antamaasi sähköpostiosoitteeseen
-                        vahvistuspyyntö. Vahvista siinä olevasta linkistä sähköpostiosoitteesi.";
+            $message = "Tiedot on tallennettu. Sinulle on lähetty antamaasi sähköpostiosoitteeseen ";
+            $message.= "vahvistuspyyntö. Vahvista siinä olevasta linkistä sähköpostiosoitteesi.";
             $success = "success";
             header("Location: ./lisayslomake.php?message=$message&success=$success");
             exit;

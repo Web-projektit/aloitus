@@ -2,6 +2,7 @@
 $title = 'Sähköpostiosoitteen vahvistus';
 //$css = 'kuvagalleria.css';
 include "header.php"; 
+include "db.php";
 include "activation.php";
 ?>
 <div class="container"> 
@@ -9,9 +10,7 @@ include "activation.php";
 <h1>Neilikka</h1>
 <div class="col-12 mb-5 text-center">
 <?php 
-echo $email_already_verified ?: "";
-echo $email_verified ?: ""; 
-echo $activation_error ?: ""; 
+echo $email_verified ?: $email_already_verified ?: $activation_error; 
 ?>
 </div>
 <!--<p class="lead">If user account is verified then click on the following button to login.</p>-->

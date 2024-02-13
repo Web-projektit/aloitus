@@ -851,3 +851,191 @@ Table 'sakila.users' doesn't exist
 2024-02-13 11:52:15 INSERT INTO signup_tokens (users_id,token) VALUES (0,'4bfadc7641dcb5cc217429d4c9ab3ce9')
 2024-02-13 11:52:15 Virhe kyselyssä INSERT INTO signup_tokens (users_id,token) VALUES (0,'4bfadc7641dcb5cc217429d4c9ab3ce9'):
 Table 'sakila.signup_tokens' doesn't exist
+2024-02-13 12:05:17 array (
+)
+2024-02-13 12:05:17 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+  4 => 'phonenumber',
+)
+2024-02-13 12:05:17 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$689BFXbGl7IFewA0QqROg.b4dL1iOEj5Z9DO7GiVF6hoajV.na8VG\'',
+  'phonenumber' => '\'358505111969\'',
+)
+2024-02-13 12:05:17 SELECT 1 FROM users WHERE email = 'jukka.aula@kolumbus.fi' LIMIT 1
+2024-02-13 12:05:17 label:,kentta:firstname
+2024-02-13 12:05:17 label:,kentta:lastname
+2024-02-13 12:05:17 label:,kentta:email
+2024-02-13 12:05:17 label:,kentta:phonenumber
+2024-02-13 12:05:17 label:,kentta:password
+2024-02-13 12:05:17 label:Salasana uudestaan,kentta:password2
+2024-02-13 12:11:13 array (
+)
+2024-02-13 12:11:13 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+  4 => 'phonenumber',
+)
+2024-02-13 12:11:13 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.aula@omnia.fi\'',
+  'password' => '\'$2y$10$IXHU3EgDYsWQH1PPqGrrwezLMy7r4uAiJb4.C5rmz/O818QM8yHJa\'',
+  'phonenumber' => '\'358505111969\'',
+)
+2024-02-13 12:11:13 SELECT 1 FROM users WHERE email = 'jukka.aula@omnia.fi' LIMIT 1
+2024-02-13 12:11:41 array (
+)
+2024-02-13 12:11:41 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+  4 => 'phonenumber',
+)
+2024-02-13 12:11:41 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.t.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$/tYZHV31VioS8DOwZKweJu3.nmJbu8j2250nqiU5EAH.DQGw8reTy\'',
+  'phonenumber' => '\'358505111969\'',
+)
+2024-02-13 12:11:41 SELECT 1 FROM users WHERE email = 'jukka.t.aula@kolumbus.fi' LIMIT 1
+2024-02-13 12:11:41 INSERT INTO users (firstname,lastname,email,password,phonenumber) VALUES ('Jukka','Aula','jukka.t.aula@kolumbus.fi','$2y$10$/tYZHV31VioS8DOwZKweJu3.nmJbu8j2250nqiU5EAH.DQGw8reTy','358505111969')
+2024-02-13 12:11:41 Virhe kyselyssä INSERT INTO users (firstname,lastname,email,password,phonenumber) VALUES ('Jukka','Aula','jukka.t.aula@kolumbus.fi','$2y$10$/tYZHV31VioS8DOwZKweJu3.nmJbu8j2250nqiU5EAH.DQGw8reTy','358505111969'):
+Unknown column 'phonenumber' in 'field list'
+2024-02-13 12:11:41 result:, affected_rows:-1
+2024-02-13 12:11:41 INSERT INTO signup_tokens (users_id,token) VALUES (0,'adcbcc35d3038e46fa821912a4c70dc3')
+2024-02-13 12:11:41 Virhe kyselyssä INSERT INTO signup_tokens (users_id,token) VALUES (0,'adcbcc35d3038e46fa821912a4c70dc3'):
+Cannot add or update a child row: a foreign key constraint fails (`neilikka`.`signup_tokens`, CONSTRAINT `signup_tokens_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE)
+2024-02-13 12:25:11 array (
+)
+2024-02-13 12:25:11 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+  4 => 'phonenumber',
+)
+2024-02-13 12:25:11 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.t.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$ww1wiwTTM23EfcB29XEkc.3BF2l5JLbhr0BXJvuZguATl22S1.kmm\'',
+  'phonenumber' => '\'358505111969\'',
+)
+2024-02-13 12:25:11 SELECT 1 FROM users WHERE email = 'jukka.t.aula@kolumbus.fi' LIMIT 1
+2024-02-13 12:25:11 INSERT INTO users (firstname,lastname,email,password,phonenumber) VALUES ('Jukka','Aula','jukka.t.aula@kolumbus.fi','$2y$10$ww1wiwTTM23EfcB29XEkc.3BF2l5JLbhr0BXJvuZguATl22S1.kmm','358505111969')
+2024-02-13 12:25:11 Virhe kyselyssä INSERT INTO users (firstname,lastname,email,password,phonenumber) VALUES ('Jukka','Aula','jukka.t.aula@kolumbus.fi','$2y$10$ww1wiwTTM23EfcB29XEkc.3BF2l5JLbhr0BXJvuZguATl22S1.kmm','358505111969'):
+Unknown column 'phonenumber' in 'field list'
+2024-02-13 12:25:11 result:, affected_rows:-1
+2024-02-13 12:31:33 array (
+)
+2024-02-13 12:31:34 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+)
+2024-02-13 12:31:34 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.t.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$ltTkRxraAuW085Upn4TsAeShDXOVSnoCrPNUU6TBoz78yLxuLLlQC\'',
+)
+2024-02-13 12:31:34 SELECT 1 FROM users WHERE email = 'jukka.t.aula@kolumbus.fi' LIMIT 1
+2024-02-13 12:31:34 INSERT INTO users (firstname,lastname,email,password) VALUES ('Jukka','Aula','jukka.t.aula@kolumbus.fi','$2y$10$ltTkRxraAuW085Upn4TsAeShDXOVSnoCrPNUU6TBoz78yLxuLLlQC')
+2024-02-13 12:31:34 result:1, affected_rows:1
+2024-02-13 12:31:34 INSERT INTO signup_tokens (users_id,token) VALUES (168,'03388fe9f360553cff34e588b6126edd')
+2024-02-13 12:31:37 Viesti lähetetty: jukka.t.aula@kolumbus.fi!
+2024-02-13 12:41:42 array (
+)
+2024-02-13 12:41:42 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+)
+2024-02-13 12:41:42 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.t.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$I56heNoxsPbrShUpW3nSVeTxJsxGZf811cRVGRG4SoKSItNWbCaRS\'',
+)
+2024-02-13 12:41:42 SELECT 1 FROM users WHERE email = 'jukka.t.aula@kolumbus.fi' LIMIT 1
+2024-02-13 12:46:16 array (
+)
+2024-02-13 12:46:16 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+)
+2024-02-13 12:46:16 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.t.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$2atlM8R9Yi7V5MIfp7cK6ujorl2/oPHJQmc2bEDQTmVc9FCUu/8qW\'',
+)
+2024-02-13 12:46:16 SELECT 1 FROM users WHERE email = 'jukka.t.aula@kolumbus.fi' LIMIT 1
+2024-02-13 12:46:16 array (
+  'firstname' => true,
+  'lastname' => true,
+  'email' => true,
+  'password' => true,
+)
+2024-02-13 12:46:31 array (
+)
+2024-02-13 12:46:31 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+  4 => 'mobilenumber',
+)
+2024-02-13 12:46:31 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$McRCZHutUyEB8/aqD/2GBeJyKPejPrTnockqVU/NdeJZYxDLNFXp.\'',
+  'mobilenumber' => '\'+358505111969\'',
+)
+2024-02-13 12:46:31 SELECT 1 FROM users WHERE email = 'jukka.aula@kolumbus.fi' LIMIT 1
+2024-02-13 12:46:31 array (
+  'firstname' => true,
+  'lastname' => true,
+  'email' => true,
+  'password' => true,
+  'mobilenumber' => false,
+)
+2024-02-13 12:49:29 array (
+)
+2024-02-13 12:49:29 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+  4 => 'mobilenumber',
+)
+2024-02-13 12:49:29 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$qVvvQckdJZO0y7NQ7dv1/eRefXuPcpBnyWPue5Qlw9ZoSxnGG2Ik6\'',
+  'mobilenumber' => '\'358505111969\'',
+)
+2024-02-13 12:49:29 SELECT 1 FROM users WHERE email = 'jukka.aula@kolumbus.fi' LIMIT 1
+2024-02-13 12:49:29 array (
+  'firstname' => true,
+  'lastname' => true,
+  'email' => true,
+  'password' => true,
+  'mobilenumber' => false,
+)
