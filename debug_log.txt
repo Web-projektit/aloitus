@@ -807,3 +807,47 @@ Column count doesn't match value count at row 1
 2024-02-12 12:57:18 label:,kentta:phonenumber
 2024-02-12 12:57:18 label:,kentta:password
 2024-02-12 12:57:18 label:Salasana uudestaan,kentta:password2
+2024-02-12 13:14:30 label:,kentta:firstname
+2024-02-12 13:14:30 label:,kentta:lastname
+2024-02-12 13:14:30 label:,kentta:email
+2024-02-12 13:14:30 label:,kentta:phonenumber
+2024-02-12 13:14:30 label:,kentta:password
+2024-02-12 13:14:30 label:Salasana uudestaan,kentta:password2
+2024-02-13 11:45:58 label:,kentta:firstname
+2024-02-13 11:45:58 label:,kentta:lastname
+2024-02-13 11:45:58 label:,kentta:email
+2024-02-13 11:45:58 label:,kentta:phonenumber
+2024-02-13 11:45:58 label:,kentta:password
+2024-02-13 11:45:58 label:Salasana uudestaan,kentta:password2
+2024-02-13 11:47:19 label:,kentta:firstname
+2024-02-13 11:47:19 label:,kentta:lastname
+2024-02-13 11:47:19 label:,kentta:email
+2024-02-13 11:47:19 label:,kentta:phonenumber
+2024-02-13 11:47:19 label:,kentta:password
+2024-02-13 11:47:19 label:Salasana uudestaan,kentta:password2
+2024-02-13 11:52:15 array (
+)
+2024-02-13 11:52:15 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+  4 => 'phonenumber',
+)
+2024-02-13 11:52:15 array (
+  'firstname' => '\'Jukka\'',
+  'lastname' => '\'Aula\'',
+  'email' => '\'jukka.aula@kolumbus.fi\'',
+  'password' => '\'$2y$10$lS5GJ6/7iLQ6P75Q.gWGWOTCwP5/WbT3oB1hzun6FcZXCqet47f1y\'',
+  'phonenumber' => '\'358505111969\'',
+)
+2024-02-13 11:52:15 SELECT 1 FROM users WHERE email =  LIMIT 1
+2024-02-13 11:52:15 Virhe kyselyssä SELECT 1 FROM users WHERE email =  LIMIT 1:
+You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1
+2024-02-13 11:52:15 INSERT INTO users (firstname,lastname,email,password,phonenumber) VALUES ('Jukka','Aula','jukka.aula@kolumbus.fi','$2y$10$lS5GJ6/7iLQ6P75Q.gWGWOTCwP5/WbT3oB1hzun6FcZXCqet47f1y','358505111969')
+2024-02-13 11:52:15 Virhe kyselyssä INSERT INTO users (firstname,lastname,email,password,phonenumber) VALUES ('Jukka','Aula','jukka.aula@kolumbus.fi','$2y$10$lS5GJ6/7iLQ6P75Q.gWGWOTCwP5/WbT3oB1hzun6FcZXCqet47f1y','358505111969'):
+Table 'sakila.users' doesn't exist
+2024-02-13 11:52:15 result:, affected_rows:-1
+2024-02-13 11:52:15 INSERT INTO signup_tokens (users_id,token) VALUES (0,'4bfadc7641dcb5cc217429d4c9ab3ce9')
+2024-02-13 11:52:15 Virhe kyselyssä INSERT INTO signup_tokens (users_id,token) VALUES (0,'4bfadc7641dcb5cc217429d4c9ab3ce9'):
+Table 'sakila.signup_tokens' doesn't exist

@@ -19,8 +19,8 @@ input_kentta('firstname',required:$required['firstname'],autofocus:true);
 input_kentta('lastname',required:$required['lastname']);
 input_kentta('email',required:$required['email']);
 input_kentta('phonenumber',required:$required['phonenumber']);
-input_kentta('password',required:$required['password']);
-input_kentta('password2',required:$required['password'],label:"Salasana uudestaan");
+input_kentta('password',type:"password",required:$required['password']);
+input_kentta('password2',type:"password",required:$required['password'],label:"Salasana uudestaan");
 ?>
 <div class="col-11 d-flex justify-content-end mt-4">
 <button name='button' class="btn btn-primary me-4" type="submit">Lisää</button>
