@@ -1,5 +1,4 @@
 <?php
-include "asetukset.php";
 include "debuggeri_simple.php";
 $active = basename($_SERVER['PHP_SELF'],'.php');
 function active($sivu,$active){

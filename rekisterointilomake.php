@@ -3,6 +3,7 @@ $title = "Rekisteröityminen";
 $js = "rekisterointi.js";
 $lomakekentat = ['firstname', 'lastname', 'email', 'password', 'mobilenumber'];
 $pakolliset = ['firstname', 'lastname', 'email', 'password'];
+include 'asetukset.php';
 include 'header.php';
 include 'db.php';
 include 'lomakerutiinit.php';
@@ -26,7 +27,7 @@ input_kentta('password',type:"password",required:$required['password']);
 input_kentta('password2',type:"password",required:$required['password'],label:"Salasana uudestaan");
 ?>
 <div class="col-11 d-flex justify-content-end mt-4">
-<button name='button' class="btn btn-primary me-4" type="submit">Lisää</button>
+<button name='button' class="btn btn-primary me-4" type="submit">Rekisteröidy</button>
 </div>
 </fieldset>
 </form>

@@ -1039,3 +1039,178 @@ Unknown column 'phonenumber' in 'field list'
   'password' => true,
   'mobilenumber' => false,
 )
+2024-02-14 10:32:25 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:33:06 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:37:48 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:41:32 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:43:08 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:43:56 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:44:15 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:44:31 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:45:02 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:45:19 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 10:59:31 array (
+  'accountNotExistErr' => 'Tuntematon sähköpostiosoite',
+  'accountExistsMsg' => 'Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen',
+  'verificationRequiredErr' => 'Vahvista sähköpostiosoite ensin',
+  'emailPwdErr' => 'Väärä käyttäjätunnus tai salasana',
+)
+2024-02-14 10:59:31 array (
+  0 => 'email',
+  1 => 'password',
+)
+2024-02-14 10:59:31 array (
+  'email' => 'jukka.t.aula@kolumbus.fi',
+  'password' => 'jukka1234567',
+)
+2024-02-14 10:59:31 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.t.aula@kolumbus.fi'
+2024-02-14 11:01:30 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-14 11:01:45 array (
+  'accountNotExistErr' => 'Tuntematon sähköpostiosoite',
+  'accountExistsMsg' => 'Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen',
+  'verificationRequiredErr' => 'Vahvista sähköpostiosoite ensin',
+  'emailPwdErr' => 'Väärä käyttäjätunnus tai salasana',
+)
+2024-02-14 11:01:45 array (
+  0 => 'email',
+  1 => 'password',
+)
+2024-02-14 11:01:45 array (
+  'email' => 'jukka.t.aula@kolumbus.fi',
+  'password' => 'jukka12345678',
+)
+2024-02-14 11:01:45 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.t.aula@kolumbus.fi'
+2024-02-14 11:01:45 array (
+  'email' => true,
+  'password' => true,
+)
+2024-02-14 11:02:02 array (
+  'accountNotExistErr' => 'Tuntematon sähköpostiosoite',
+  'accountExistsMsg' => 'Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen',
+  'verificationRequiredErr' => 'Vahvista sähköpostiosoite ensin',
+  'emailPwdErr' => 'Väärä käyttäjätunnus tai salasana',
+)
+2024-02-14 11:02:02 array (
+  0 => 'email',
+  1 => 'password',
+)
+2024-02-14 11:02:02 array (
+  'email' => 'jukka.aula@kolumbus.fi',
+  'password' => 'jukka1234567',
+)
+2024-02-14 11:02:02 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@kolumbus.fi'
+2024-02-14 11:02:02 array (
+  'email' => true,
+  'password' => true,
+)
+2024-02-14 11:02:29 array (
+  'accountNotExistErr' => 'Tuntematon sähköpostiosoite',
+  'accountExistsMsg' => 'Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen',
+  'verificationRequiredErr' => 'Vahvista sähköpostiosoite ensin',
+  'emailPwdErr' => 'Väärä käyttäjätunnus tai salasana',
+)
+2024-02-14 11:02:29 array (
+  0 => 'email',
+  1 => 'password',
+)
+2024-02-14 11:02:29 array (
+  'email' => 'jukka.aul@kolumbus.fi',
+  'password' => 'jukka1234567',
+)
+2024-02-14 11:02:29 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aul@kolumbus.fi'
+2024-02-14 11:02:29 jukka.aul@kolumbus.fi:Tuntematon sähköpostiosoite
+2024-02-14 11:02:29 array (
+  'email' => true,
+  'password' => true,
+)
+2024-02-14 11:07:44 array (
+  'accountNotExistErr' => 'Tuntematon sähköpostiosoite',
+  'accountExistsMsg' => 'Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen',
+  'verificationRequiredErr' => 'Vahvista sähköpostiosoite ensin',
+  'emailPwdErr' => 'Väärä käyttäjätunnus tai salasana',
+)
+2024-02-14 11:07:44 array (
+  0 => 'email',
+  1 => 'password',
+)
+2024-02-14 11:07:44 array (
+  'email' => 'jukka.aul@kolumbus.fi',
+  'password' => 'jukka1234567',
+)
+2024-02-14 11:07:44 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aul@kolumbus.fi'
+2024-02-14 11:07:44 jukka.aul@kolumbus.fi:Tuntematon sähköpostiosoite
+2024-02-14 11:07:44 array (
+  'email' => true,
+  'password' => true,
+)
+2024-02-14 11:10:01 array (
+  'accountNotExistErr' => 'Tuntematon sähköpostiosoite',
+  'accountExistsMsg' => 'Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen',
+  'verificationRequiredErr' => 'Vahvista sähköpostiosoite ensin',
+  'emailPwdErr' => 'Väärä käyttäjätunnus tai salasana',
+)
+2024-02-14 11:10:01 array (
+  0 => 'email',
+  1 => 'password',
+)
+2024-02-14 11:10:01 array (
+  'email' => 'jukka.t.aula@kolumbus.fi',
+  'password' => 'jukka1234567',
+)
+2024-02-14 11:10:01 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.t.aula@kolumbus.fi'
+2024-02-14 11:32:20 ,session ja cookie
+2024-02-14 11:32:20 array (
+  'loggedIn' => 'user',
+)
+2024-02-14 11:32:20 array (
+  'PHPSESSID' => 'c7o587lg7ne3ehg6n71e8snvpi',
+)
+2024-02-14 11:32:34 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)

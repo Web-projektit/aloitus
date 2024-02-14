@@ -28,10 +28,10 @@ if (isset($_POST['button'])) {
             if (isset($_POST[$kentta])) {
                 if (validoi($kentta,$_POST[$kentta])) {
                     if ($kentta == 'password') {
-                        $arvot[$kentta] = "'".password_hash(puhdista($yhteys, $_POST[$kentta]), PASSWORD_DEFAULT)."'";
+                        $arvot[$kentta] = password_hash(puhdista($yhteys, $_POST[$kentta]), PASSWORD_DEFAULT);
                         }
                     else {
-                        $arvot[$kentta] = "'".puhdista($yhteys, $_POST[$kentta])."'";
+                        $arvot[$kentta] = puhdista($yhteys, $_POST[$kentta]);
                         }
                     }   
                 else {
@@ -58,7 +58,7 @@ if (isset($_POST['button'])) {
       
     if (empty($virheet)){    
         $email = $arvot['email'];
-        $query = "SELECT 1 FROM users WHERE email = $email LIMIT 1";
+        $query = "SELECT 1 FROM users WHERE email = '$email' LIMIT 1";
         debuggeri($query);
         $result = query_oma($yhteys,$query);
         if ($result && $result->num_rows > 0) {
@@ -69,8 +69,8 @@ if (isset($_POST['button'])) {
 
     if (empty($virheet)) {
         $kentat = implode(",",$lomakekentat);
-        $arvot = implode(",",$arvot);
-        $query = "INSERT INTO users ($kentat) VALUES ($arvot)";
+        $arvot = implode("','",$arvot);
+        $query = "INSERT INTO users ($kentat) VALUES ('$arvot')";
         debuggeri($query);
         $result = query_oma($yhteys,$query);
         debuggeri("result:$result, affected_rows:".$yhteys->affected_rows);
@@ -97,7 +97,7 @@ if (isset($_POST['button'])) {
             $msg.= "<a href='http://$PALVELIN/$PALVELU/$LINKKI_VERIFICATION?token=$token'>Vahvista sähköpostiosoite</a>";
             $msg.= "<br><br>t. $PALVELUOSOITE";
             $subject = "Vahvista sähköpostiosoite";
-            $lahetetty = posti(trim($email,"'"),$msg,$subject);
+            $lahetetty = posti($email,$msg,$subject);
             }   
         if ($lahetetty){
             $message = "Tiedot on tallennettu. Sinulle on lähetty antamaasi sähköpostiosoitteeseen ";

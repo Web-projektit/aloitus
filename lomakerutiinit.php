@@ -86,7 +86,7 @@ function arvo($kentta) {
     echo "<label class=\"form-label col-sm-3\" for=\"$kentta\">".ucfirst($label)."</label>";
     echo '<div class="col-sm-8">';
     echo '<input class="form-control'.is_invalid($kentta).
-         "\" type=\"$type\" name=\"$kentta\" id=\"$kentta\"".
+         "\" type=\"$type\" name=\"$kentta\" id=\"$kentta\" ".
          pattern($kentta)."$autofocus $required value=\"".arvo($kentta)."\">";
     echo '<div class="invalid-feedback">'.virheilmoitus($kentta).'</div>';
     echo '</div></div>';

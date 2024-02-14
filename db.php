@@ -5,6 +5,10 @@ if ($yhteys->connect_error) {
     }
 $yhteys->set_charset("utf8");
 
+function db_connect(){
+return $GLOBALS['yhteys'];   
+}
+
 function query_oma($yhteys, $query) {
 /* Suorittaa kyselyn poimien hallitusti fatal-virheet, joita
    voisi syntyä esim. viiteavaimien estämissä kyselyissä. */
