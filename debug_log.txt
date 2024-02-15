@@ -1214,3 +1214,36 @@ Unknown column 'phonenumber' in 'field list'
   'password' => true,
   'rememberme' => false,
 )
+2024-02-15 09:02:51 loggedIn:
+2024-02-15 09:04:38 loggedIn:
+2024-02-15 09:04:39 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-02-15 09:05:03 loggedIn:
+2024-02-15 09:05:03 array (
+  'accountNotExistErr' => 'Tuntematon sähköpostiosoite',
+  'accountExistsMsg' => 'Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen',
+  'verificationRequiredErr' => 'Vahvista sähköpostiosoite ensin',
+  'emailPwdErr' => 'Väärä käyttäjätunnus tai salasana',
+)
+2024-02-15 09:05:03 array (
+  0 => 'email',
+  1 => 'password',
+)
+2024-02-15 09:05:03 array (
+  'email' => 'jukka.t.aula@kolumbus.fi',
+  'password' => 'jukka1234567',
+)
+2024-02-15 09:05:03 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.t.aula@kolumbus.fi'
+2024-02-15 09:05:04 loggedIn:user
+2024-02-15 09:05:25 ,session ja cookie
+2024-02-15 09:05:25 array (
+  'loggedIn' => 'user',
+)
+2024-02-15 09:05:25 array (
+  'PHPSESSID' => '1h37p8ougp2e712j7sbmcpanmg',
+)
+2024-02-15 09:05:25 loggedIn:
+2024-02-15 09:05:38 loggedIn:

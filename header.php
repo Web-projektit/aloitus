@@ -1,5 +1,12 @@
 <?php
 include "debuggeri_simple.php";
+/* Huom. suojatulla sivulla on asetukset,db,rememberme.php; */
+if (!isset($loggedIn)){
+  //include "db.php";
+  include "rememberme.php";
+  $loggedIn = loggedIn();
+  }
+debuggeri("loggedIn:$loggedIn"); 
 $active = basename($_SERVER['PHP_SELF'],'.php');
 function active($sivu,$active){
     return $active == $sivu ? 'active' : '';  
@@ -74,6 +81,20 @@ echo "<a class='".active('sivumalli',$active). "' href='sivumalli.php'>Sivumalli
 echo "<a class='".active('hakulomake',$active). "' href='hakulomake.php'>Sakila-haku</a>";
 echo "<a class='".active('lisayslomake',$active). "' href='lisayslomake.php'>Sakila-lisäys</a>";
 /* Huom. tästä oikeaan laitaan. */
-echo "<a class='nav-suojaus ".active('phpinfo',$active). "' href='phpinfo.php'>phpinfo</a>";
+switch ($loggedIn) {
+  case 'admin':
+    //echo "<a class='".active('kayttajat',$active). "' href='kayttajat.php'>Käyttäjät</a>";
+  case true:
+    echo "<a class='".active('profiili',$active). "' href='profiili.php'>Profiili</a>";
+    /* Huom. tästä oikeaan laitaan. */
+    echo "<a class='nav-suojaus ".active('phpinfo',$active). "' href='phpinfo.php'>phpinfo</a>";
+    //echo "<a class='".active('fake',$active). "' href='fake.php'>fake</a>";
+    echo '<a href="poistu.php">Poistu</a>';
+    break;
+  default:
+    echo "<a class='nav-suojaus ".active('login',$active)."' href='login.php'>Kirjautuminen</a>";
+    break;
+} 
+
 ?>
 </nav>

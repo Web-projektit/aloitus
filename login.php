@@ -3,10 +3,10 @@ $title = "Kirjautuminen";
 $lomakekentat = ['email', 'password','rememberme'];
 $pakolliset = ['email', 'password'];
 include 'asetukset.php';
-include 'header.php';
 include 'db.php';
+include 'header.php';
 include 'lomakerutiinit.php';
-include 'rememberme.php';
+// include 'rememberme.php';
 include 'kirjautuminen.php';
 ?>
 <div class="container" id="root">
