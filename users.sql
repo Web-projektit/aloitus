@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14.02.2024 klo 08:35
+-- Generation Time: 15.02.2024 klo 09:18
 -- Palvelimen versio: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,7 +35,7 @@ CREATE TABLE `users` (
   `mobilenumber` varchar(15) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `token` varchar(255) DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT 0,
+  `is_active` tinyint(1) NOT NULL DEFAULT 0,
   `image` varchar(50) DEFAULT NULL,
   `role` int(4) NOT NULL DEFAULT 1,
   `created` datetime NOT NULL DEFAULT current_timestamp(),
