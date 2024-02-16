@@ -13,7 +13,8 @@ $pattern['lastname'] = "/^[a-zåäöA-ZÅÄÖ0'\- ]{1,50}$/";
 $pattern['password'] = "/^.{12,}$/";
 $pattern['password2'] = $pattern['password'];
 $pattern['mobilenumber'] = "/^[0-9]{7,15}$/";
-$pattern['email'] = "/^[a-zA-Z_]+[a-zA-Z0-9_\.+-]*@[a-zA-Z_]+(\.[a-zA-Z0-9_-]{2,})?\.[a-zA-Z]{2,}$/";
+$pattern['email'] = "/^[a-zA-Z_]+[a-zA-Z0-9_.+\-]*@[a-zA-Z_]+(\.[a-zA-Z0-9_\-]{2,})?\.[a-zA-Z]{2,}$/";
+$virheilmoitukset['password2'] = "Salasanat eivät täsmää";
 
 if (isset($_POST['button'])) {
     foreach ($lomakekentat as $kentta) {

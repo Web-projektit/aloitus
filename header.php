@@ -18,6 +18,7 @@ function active($sivu,$active){
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta description="joku kuvausteksti" author="joku tekijä">
+<link rel="icon" href="favicon.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <link rel="stylesheet" href="navbar.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
@@ -30,7 +31,10 @@ if (isset($js)) echo "<script defer src='$js'></script>";
 <title><?=$title?></title>
 <script>
 let poista_invalid = event => {
-  /* Oma kuuntelijafunktio, jotta kuuntelijan voi myös poistaa. */
+/* 
+Oma kuuntelijafunktio, jotta kuuntelijan voi myös poistaa. 
+Tässä poistetaan palvelimen asettamat virheilmoitukset.
+*/
   const input = event.target
   input.classList.remove('is-invalid')
   input.removeEventListener('input', poista_invalid)
@@ -40,7 +44,7 @@ window.onload = function () {'use strict'
   var forms = document.querySelectorAll('.needs-validation')
   /* Huom. forEach-metodi toimii nodeListin kanssa v.2020 alkaen.
      Array.prototype.slice.call(forms) */
-  forms.forEach(function (form) {
+  forms.forEach(form => {
     /* Kenttään kirjoitus poistaa virheilmoituksen palvelimelta. */
     form.querySelectorAll('.is-invalid').forEach(input => {
       input.addEventListener('input', poista_invalid)

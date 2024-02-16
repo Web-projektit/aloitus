@@ -1,6 +1,6 @@
 <?php
 $title = "Rekisteröityminen";
-$js = "rekisterointi.js";
+$js = "salasanatarkistus.js";
 $lomakekentat = ['firstname', 'lastname', 'email', 'password', 'mobilenumber'];
 $pakolliset = ['firstname', 'lastname', 'email', 'password'];
 include 'asetukset.php';
@@ -11,13 +11,11 @@ include 'posti.php';
 include 'rekisterointi.php';
 ?>
 <div class="container" id="root">
-<form id="rekisterointilomake" class="mb-3 needs-validation" novalidate action="rekisterointilomake.php" method="post" enctype="multipart/form-data">
+<form id="rekisterointilomake" class="mb-3 needs-validation salasanat" novalidate action="rekisterointilomake.php" method="post" enctype="multipart/form-data">
 <fieldset>
 <legend>Rekisteröityminen</legend>
 <?php   
-foreach ($lomakekentat as $kentta) {
-    $required[$kentta] = in_array($kentta, $pakolliset) ? true : false;
-    }
+foreach ($lomakekentat as $kentta) $required[$kentta] = in_array($kentta, $pakolliset);
 debuggeri($required);    
 input_kentta('firstname',required:$required['firstname'],autofocus:true);
 input_kentta('lastname',required:$required['lastname']);

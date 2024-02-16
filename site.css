@@ -21,6 +21,10 @@ form {
   margin: auto;
 }
 
+#ilmoitukset {
+  max-width: 700px;
+  margin: auto;
+}
 /*fieldset {
   border: 2px groove; 
   padding: 0.35em 0.625em 0.75em; 

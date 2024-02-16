@@ -25,13 +25,24 @@ input_kentta('password',type:"password",required:$required['password']);
 <div class="col-11 d-flex justify-content-end mt-4">
 <button name='button' class="btn btn-primary me-4" type="submit">Kirjaudu</button>
 </div>
+
+
+<div class="row offset-sm-3 mt-3">
+<a href="forgotpassword.php">Unohtuiko salasana</a>
+</div>
+
+<div class="row offset-sm-3">
+<!--<p class="mt-2 pt-1 mb-0">Käyttäjätunnus puuttuu?-->
+<a href="rekisterointilomake.php">Rekisteröidy</a>
+</div>
+
 </fieldset>
 </form>
 
-    <div id="ilmoitukset" class="alert alert-<?= $success ;?> alert-dismissible fade show <?= $display ?? ""; ?>" role="alert">
-    <p><?= $message; ?></p>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+<div id="ilmoitukset" class="alert alert-<?= $success ;?> alert-dismissible fade show <?= $display ?? ""; ?>" role="alert">
+<p><?= $message; ?></p>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
 </div>
 <?php

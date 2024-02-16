@@ -58,7 +58,7 @@ if (isset($_POST['button'])) {
       $query = "SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = '$email'";
       debuggeri($query);
       $result = query_oma($yhteys,$query);
-      if (!$result) die("Tietokantayhteys ei toimi: ".mysqli_error($connection));
+      if (!$result) die("Tietokantayhteys ei toimi: ".$yhteys->error);
       if (!$result->num_rows) {
          debuggeri("$email:$virheilmoitukset[accountNotExistErr]");
          $message =  $ilmoitukset['errorMsg'];
