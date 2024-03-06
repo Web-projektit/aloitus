@@ -1,0 +1,67 @@
+2024-02-16 15:20:42 loggedIn:user
+2024-02-16 15:20:42 array (
+  'firstname' => true,
+  'lastname' => true,
+  'email' => true,
+  'password' => true,
+  'mobilenumber' => false,
+)
+2024-02-16 15:21:44 ,session ja cookie
+2024-02-16 15:21:44 array (
+  'loggedIn' => 'user',
+)
+2024-02-16 15:21:44 array (
+  'PHPSESSID' => 'dcgj5is65i1j93191rrp70k5be',
+)
+2024-02-16 15:21:44 loggedIn:
+2024-02-16 15:21:46 loggedIn:
+2024-02-16 15:21:46 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-03-04 08:28:25 loggedIn:
+2024-03-04 08:28:25 array (
+  'firstname' => true,
+  'lastname' => true,
+  'email' => true,
+  'password' => true,
+  'mobilenumber' => false,
+)
+2024-03-04 08:28:33 loggedIn:
+2024-03-04 08:28:33 array (
+  'email' => true,
+  'password' => true,
+  'rememberme' => false,
+)
+2024-03-04 08:28:46 loggedIn:
+2024-03-04 08:28:46 array (
+  'accountNotExistErr' => 'Tuntematon sähköpostiosoite',
+  'accountExistsMsg' => 'Sähköposti on lähetetty antamaasi sähköpostiosoitteeseen',
+  'verificationRequiredErr' => 'Vahvista sähköpostiosoite ensin',
+  'emailPwdErr' => 'Väärä käyttäjätunnus tai salasana',
+)
+2024-03-04 08:28:46 array (
+  0 => 'email',
+  1 => 'password',
+)
+2024-03-04 08:28:46 array (
+  'email' => 'jukka.aula@omnia.fi',
+  'password' => 'jukka1234567',
+)
+2024-03-04 08:28:46 SELECT users.id,password,is_active,name FROM users LEFT JOIN roles ON role = roles.id WHERE email = 'jukka.aula@omnia.fi'
+2024-03-04 08:28:46 loggedIn:admin
+2024-03-06 13:23:00 loggedIn header.php:n alussa:
+2024-03-06 13:23:00 header.php käynnistää istunnon
+2024-03-06 13:23:00 loggedIn:admin
+2024-03-06 13:25:50 loggedIn header.php:n alussa: 
+2024-03-06 13:25:50 header.php käynnistää istunnon
+2024-03-06 13:25:50 loggedIn:admin
+2024-03-06 13:26:04 loggedIn header.php:n alussa: 
+2024-03-06 13:26:04 header.php käynnistää istunnon
+2024-03-06 13:26:04 loggedIn:admin
+2024-03-06 13:26:24 loggedIn header.php:n alussa: ei asetettu
+2024-03-06 13:26:24 header.php käynnistää istunnon
+2024-03-06 13:26:24 loggedIn:admin
+2024-03-06 13:26:45 loggedIn header.php:n alussa: admin
+2024-03-06 13:26:45 loggedIn:admin

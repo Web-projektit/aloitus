@@ -1,8 +1,10 @@
 <?php
 include "debuggeri_simple.php";
 /* Huom. suojatulla sivulla on asetukset,db,rememberme.php; */
+debuggeri("loggedIn header.php:n alussa: ".($loggedIn ?? "ei asetettu")); 
 if (!isset($loggedIn)){
   //include "db.php";
+  debuggeri("header.php käynnistää istunnon");
   include "rememberme.php";
   $loggedIn = loggedIn();
   }
