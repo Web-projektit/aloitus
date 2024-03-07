@@ -7,6 +7,7 @@ const poista_invalid_message = event => {
   */  
       const input = event.target;
       input.classList.remove('is-invalid');
+      /* Huom. tämä palauttaa samalla selaimen oletusviestin. */
       input.setCustomValidity('');
       input.removeEventListener('input', poista_invalid_message)
     }
@@ -24,5 +25,6 @@ lomake.addEventListener('submit', event => {
     }
    })
   
+
 
 

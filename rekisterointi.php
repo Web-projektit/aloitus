@@ -24,7 +24,7 @@ if (isset($_POST['button'])) {
         }
      }
     debuggeri($virheilmoitukset);    
-    if (!$virheet) {
+    if (empty($virheet)) {
         foreach ($lomakekentat as $indeksi => $kentta) {
             if (isset($_POST[$kentta])) {
                 if (validoi($kentta,$_POST[$kentta])) {
@@ -104,7 +104,7 @@ if (isset($_POST['button'])) {
             $message = "Tiedot on tallennettu. Sinulle on lähetty antamaasi sähköpostiosoitteeseen ";
             $message.= "vahvistuspyyntö. Vahvista siinä olevasta linkistä sähköpostiosoitteesi.";
             $success = "success";
-            header("Location: ./lisayslomake.php?message=$message&success=$success");
+            header("Location: ./rekisterointikuittaus.php?message=$message&success=$success");
             exit;
             }
         elseif ($lisays) {

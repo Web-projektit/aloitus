@@ -1,6 +1,7 @@
 <?php 
 $title = 'Sähköpostiosoitteen vahvistus';
 //$css = 'kuvagalleria.css';
+include "asetukset.php";
 include "header.php"; 
 include "db.php";
 include "activation.php";

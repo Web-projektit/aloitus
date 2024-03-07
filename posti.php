@@ -7,8 +7,6 @@ require 'SMTP.php';
 //$to = $EMAIL_ADMIN;
 
 function posti($emailTo,$msg,$subject){
-$emailFrom = "wohjelmointi@gmail.com";
-$emailFromName = "Ohjelmointikurssi";
 $emailToName = "";
 /* Generoidaan fatal error shutdown function-testaamiseksi. */
 /* throw new Error('Tästä seuraisi fatal error, sillä kutsu on try-catchin ulkopuolella.'); */
@@ -24,7 +22,7 @@ try {
     $mail->CharSet = 'UTF-8';
     $mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
     $mail->SMTPSecure = 'tls'; 
-    $mail->setFrom($emailFrom, $emailFromName);
+    $mail->setFrom(EMAIL_FROM, EMAIL_FROM_NAME);
     $mail->addAddress($emailTo, $emailToName);
     $mail->Subject = $subject;
     $mail->msgHTML($msg); //$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,

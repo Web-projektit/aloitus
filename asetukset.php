@@ -39,6 +39,9 @@ elseif (strpos($_SERVER['HTTP_HOST'],"azurewebsites") !== false){
     }
 
 define("SAHKOPOSTIPALVELU","mailtrap");
+define ("EMAIL_FROM","wohjelmointi@gmail.com");
+define ("EMAIL_FROM_NAME","Ohjelmointikurssi");
+
 if (SAHKOPOSTIPALVELU == 'sendgrid'){
     /* SendGrid */      
     define("EMAIL_HOST","smtp.sendgrid.net");

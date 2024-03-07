@@ -1,6 +1,7 @@
 <?php
 $title = "Elokuvan lisääminen";
 $js = "lisays.js";
+include 'asetukset.php';
 include 'db.php';
 include 'header.php';
 include 'lomakerutiinit.php';

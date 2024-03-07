@@ -65,3 +65,55 @@
 2024-03-06 13:26:24 loggedIn:admin
 2024-03-06 13:26:45 loggedIn header.php:n alussa: admin
 2024-03-06 13:26:45 loggedIn:admin
+2024-03-06 13:45:49 loggedIn header.php:n alussa: admin
+2024-03-06 13:45:49 loggedIn:admin
+2024-03-07 13:05:28 loggedIn header.php:n alussa: ei asetettu
+2024-03-07 13:05:28 header.php käynnistää istunnon
+2024-03-07 13:05:28 loggedIn:
+2024-03-07 13:05:28 array (
+  'firstname' => true,
+  'lastname' => true,
+  'email' => true,
+  'password' => true,
+  'mobilenumber' => false,
+)
+2024-03-07 13:36:35 loggedIn header.php:n alussa: ei asetettu
+2024-03-07 13:36:35 header.php käynnistää istunnon
+2024-03-07 13:36:35 loggedIn:
+2024-03-07 13:36:35 array (
+  'password2' => 'Salasanat eivät täsmää',
+)
+2024-03-07 13:36:35 array (
+  0 => 'firstname',
+  1 => 'lastname',
+  2 => 'email',
+  3 => 'password',
+  4 => 'mobilenumber',
+)
+2024-03-07 13:36:35 array (
+  'firstname' => 'Matti',
+  'lastname' => 'Meikäläinen',
+  'email' => 'matti.meikalainen@omnia.fi',
+  'password' => '$2y$10$bgOJDxgQJg2Lt4EtPhKBg.sK2IYDa9mi05qZ17T2vwo.X5d2fmGQK',
+  'mobilenumber' => '0501234567',
+)
+2024-03-07 13:36:35 SELECT 1 FROM users WHERE email = 'matti.meikalainen@omnia.fi' LIMIT 1
+2024-03-07 13:36:35 INSERT INTO users (firstname,lastname,email,password,mobilenumber) VALUES ('Matti','Meikäläinen','matti.meikalainen@omnia.fi','$2y$10$bgOJDxgQJg2Lt4EtPhKBg.sK2IYDa9mi05qZ17T2vwo.X5d2fmGQK','0501234567')
+2024-03-07 13:36:35 result:1, affected_rows:1
+2024-03-07 13:36:35 INSERT INTO signup_tokens (users_id,token) VALUES (170,'a033dd3c68005f2d9cd9a21f54838225')
+2024-03-07 13:36:39 Viesti lähetetty: matti.meikalainen@omnia.fi!
+2024-03-07 13:47:42 loggedIn header.php:n alussa: ei asetettu
+2024-03-07 13:47:42 header.php käynnistää istunnon
+2024-03-07 13:47:42 loggedIn:
+2024-03-07 13:50:48 loggedIn header.php:n alussa: ei asetettu
+2024-03-07 13:50:48 header.php käynnistää istunnon
+2024-03-07 13:50:48 loggedIn:
+2024-03-07 13:57:31 loggedIn header.php:n alussa: ei asetettu
+2024-03-07 13:57:31 header.php käynnistää istunnon
+2024-03-07 13:57:31 loggedIn:
+2024-03-07 14:05:31 loggedIn header.php:n alussa: ei asetettu
+2024-03-07 14:05:31 header.php käynnistää istunnon
+2024-03-07 14:05:31 loggedIn:
+2024-03-07 14:06:13 loggedIn header.php:n alussa: ei asetettu
+2024-03-07 14:06:13 header.php käynnistää istunnon
+2024-03-07 14:06:13 loggedIn:
